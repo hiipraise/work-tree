@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.container {
+  width: 100%;
+  height: 500px;
+  background-image: url(..//img/portimage.png);
+  overflow-x: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.heading1 {
+  font-size: 120px;
+  font-weight: bolder;
+  color: rgb(239, 188, 112);
+  text-align: center;
+  justify-content: center;
+  margin-top: 210px;
+  margin-left: 600px;
+}
+.para1 {
+  color: #000;
+  font-size: 20px;
+  margin-left: 795px;
+  margin-top: -19px;
+}
+.about {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: rgb(239, 188, 112);
+  font-weight: bolder;
+  margin-top: 50px;
+  font-size: 35px;
+}
+.para2 {
+  margin-top: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
+.contact {
+  margin-top: 50px;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(239, 188, 112);
+  text-align: center;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+}
+.phoneno {
+  font-size: 20px;
+  color: #000;
+  margin-left: 420px;
+  position: relative;
+  left: 30px;
+  top: 15px;
+}
+.handle {
+  font-size: 20px;
+  color: black;
+  position: relative;
+  top: 15px;
+  left: 90px;
+}
+.projectheading {
+  color: rgb(239, 188, 112);
+  font-size: 35px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 50px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.para3,
+.para4 {
+  display: inline;
+  margin-left: 20px;
+  font-size: 20px;
+  color: #000;
+  font-weight: 200;
+  margin-top: 20px;
+  position: relative;
+  left: 500px;
+  top: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+  background-color: white;
+  border: 1px solid rgb(239, 188, 112);
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(239, 188, 112);
+    color: white;
+  }
+
+  &:active {
+    background-color: rgb(209, 160, 89);
+    color: white;
+  }
+}
+.aboutme {
+  height: 400px;
+}

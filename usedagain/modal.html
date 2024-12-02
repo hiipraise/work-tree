@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>modal design</title>
+    <link rel="stylesheet" href="modal.css" />
+  </head>
+  <body>
+    <div class="user-logout">
+        <a href="#logout-modal" class="logout-btn"
+          ><button type="submit" class="user-logout-btn">Logout</button>
+        </a>
+      </div>
+    <!-- Modal -->
+    <div id="logout-modal" class="profile-modal">
+      <div class="profile-modal-content">
+        <a href="#" class="clear-btn">&times;</a>
+
+        <div class="logout-text">
+          <h2>Logout?</h2>
+          <p class="logout-detail">Really want to logout?</p>
+        </div>
+        <div class="profile-modal-buttons">
+          <a href="#" class="cancel-btn">Cancel</a>
+          <a href="../Profile/logOutSuccess.html" class="logout-confirm-btn"
+            >Yes, Logout</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

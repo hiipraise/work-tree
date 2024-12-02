@@ -1,0 +1,15 @@
+.box_1 {
+  background-color: purple;
+  color: white;
+  padding: 1rem;
+}
+.box_2 {
+  background-color: yellow;
+  color: black;
+  padding: 1rem;
+}
+@media screen and (min-width: 780px) {
+  .container {
+    display: flex;
+  }
+}
