@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <p>LOGO</p>
+      <ol>
+        <li id="my-list">Home</li>
+        <li class="my-list">About</li>
+        <li class="my-list">Contact</li>
+        <li class="my-list">Sign up</li>
+      </ol>
+    </header>
+    <img src="trenndlogo.png" alt="trennd logo" />
+    <button onclick="changeImage()">Change Image</button>
+
+    <p id="total"></p>
+    <button onclick="changeStyle()">Change Styling</button>
+    <button>3</button>
+    <button>4</button>
+    <style>
+      #total {
+        border: 2px solid red;
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+
+    <script>
+      const header = document.getElementById("header");
+      console.log(header);
+
+      const ol = document.querySelector("li");
+      ol.innerHTML = "<h5>This is a changed home page</h5>";
+      console.log(ol.getAttribute("id"));
+
+      let image = document.querySelector("img");
+      let currentImage = "trenndlogo.png";
+
+      function changeImage() {
+        if (currentImage === "trenndlogo.png") {
+          currentImage = "image.png";
+        } else {
+          currentImage = "trenndlogo.png";
+        }
+        image.setAttribute("src", currentImage);
+      }
+
+      image.setAttribute("alt", "tech string");
+
+      function changeStyle() {
+        let box = document.getElementById("total");
+        box.style.backgroundColor = "red";
+        box.style.border = "4px solid blue";
+      }
+    </script>
+  </body>
+</html>

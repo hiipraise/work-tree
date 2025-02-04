@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+input[type="number"] {
+  margin: 5px;
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}

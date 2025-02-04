@@ -1,0 +1,50 @@
+git branch and push
+
+
+git branch -m (name)
+git checkout (name)
+
+git add .
+git add .
+
+git commit -m "first commit"
+git push origin (name)
+
+
+******************************************
+
+
+connect vscode folder to GitHub
+
+git init(if not initialized)
+
+git remote add origin (GitHub repository link)
+
+git remote -v (Verify that the remote was added correctly by running)
+
+git add . (add files in the folder)
+
+git commit -m "initial commit" (commit the change)
+
+git push -u origin (name of branch)
+
+
+*********************************************
+
+
+git clone from GitHub to vscode
+
+cd /path/to/your/destination (Navigate to the folder where you want the repository to be cloned)
+
+git clone (GitHub repository link(clone from))
+
+code (name of repository)
+
+cd (name of repository)(verify repository connect)
+
+git remote -v(check remote repository)
+
+
+
+
+

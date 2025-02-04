@@ -1,0 +1,8 @@
+li {
+  list-style: none;
+}
+
+.postwrapper {
+  margin: 10px;
+  background-color:aqua;
+}

@@ -117,8 +117,18 @@ span {
 
 /* THIRD-SECTION **********************************************************************************************************/
 .section-3 {
-  margin-left: 70px;
-  margin-top: -70px;
+  width: 100%;
+  height: 400px;
+  background-color: rgba(182, 125, 182, 0.1);
+  /* margin-left: 70px; */
+  margin-top: 80px;
+  text-align: center;
+}
+h3 {
+  color: blue;
+  font-size: 50px;
+  font-weight: 700;
+  padding-top: 140px;
 }
 /* .section-4 **********************************************************************************************************/
 @keyframes moveImage {

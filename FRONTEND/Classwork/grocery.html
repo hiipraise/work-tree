@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery</title>
+  </head>
+  <body>
+    <script>
+      // let itemName = prompt("Enter the name of the item you want to buy:");
+      // let itemPrice = parseFloat(
+      //   prompt("Enter the price of the item: " + itemName)
+      // );
+      // let itemQuantity = parseFloat(prompt("Enter the quantity of the item: "));
+      // let totalPrice = itemQuantity * itemPrice;
+      // alert("Your total bill is: " + totalPrice);
+
+      // if (totalPrice > 50) {
+      //   alert("Congratulations! You received a 10% discount.");
+      //   let discountAmount = totalPrice * 0.1;
+      //   let discountedPrice = totalPrice - discountAmount;
+      //   alert("Your discounted bill is: " + discountedPrice);
+      // }
+
+      let itemName = prompt("Enter the name of the item you want to buy:");
+      let itemQuantity = prompt("Enter the quantity:");
+      let itemPrice = prompt("Enter the price per unit:");
+
+      let totalBill = itemQuantity * itemPrice;
+
+      if (totalBill > 50) {
+        totalBill *= 0.9; // Apply 10% discount
+      }
+
+      let items = [];
+      let totalPrice = 0;
+      let addMore = "yes";
+
+      while (addMore === "yes") {
+        addMore = prompt("Do you want to add another item? (yes/no)");
+        addMore = addMore.toLowerCase();
+        let itemName = prompt("Enter the name of the item:");
+        let itemQuantity = parseInt(prompt("Enter the quantity:"));
+        let itemPrice = parseFloat(prompt("Enter the price per unit:"));
+
+        items = {
+          name: itemName,
+          quantity: itemQuantity,
+          price: itemPrice,
+        };
+        totalPrice += itemQuantity * itemPrice;
+        addMore = prompt("Do you want to add another item? (yes/no)");
+        addMore = addMore.toLowerCase();
+      }
+
+      // Display the summary
+      document.write("<h2>Shopping Cart Summary</h2>");
+
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        document.write(
+          `<p>${item.quantity} x ${item.name} - $${item.price}</p>`
+        );
+      }
+
+      document.write(`<p>Total Price: $${totalPrice}</p>`);
+
+      // Apply discount if applicable
+      if (totalPrice > 50) {
+        let discount = totalPrice * 0.1;
+        totalPrice -= discount;
+        document.write(`<p>Discount Applied: $${discount}</p>`);
+      }
+
+      document.write(`<p>Final Price: $${totalPrice}</p>`);
+    </script>
+  </body>
+</html>

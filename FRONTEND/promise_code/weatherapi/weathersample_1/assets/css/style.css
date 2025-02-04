@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI";
+}
+
+.container {
+  width: calc(100%-40%);
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #c6793bc5;
+  border-radius: 20px;
+  color: #fff;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0px 10px 10px #c69268c5;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+#weather-form {
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fa-search {
+  font-size: 24px;
+  cursor: pointer;
+  color: #c69268c5;
+  position: relative;
+  left: -40px;
+  transition: color 0.3s;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  /* &:focus {
+    background-color: #ded2cb;
+  } */
+}
+
+.weather-data {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.weather-location,
+.weather-temperature {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 22px;
+}
+#weather-location-city {
+  font-weight: bold;
+}

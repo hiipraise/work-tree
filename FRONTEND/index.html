@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js</title>
+  </head>
+  <body>
+    <center>
+      <section>
+        <div>
+          <p>Hello World</p>
+        </div>
+      </section>
+    </center>
+    <script>
+      const name = prompt("Whats your name?");
+      const meal = prompt("Whats your fave meal?");
+      function sayHello(name) {
+        return `Hello, ${name} Good afternoon!`;
+      }
+      function faveMeal(meal) {
+        return `Your fave meal is ${meal}!`;
+      }
+      console.log(sayHello(name));
+      console.log(faveMeal(meal));
+
+      //************************
+      function sayHi(name) {
+        return `Hello, ${name}!`;
+      }
+      console.log(sayHi("John Doe"));
+
+      //************************
+      function sayBye(greeting) {
+        return `Alright, ${greeting}!`;
+      }
+      console.log(sayBye("Goodbye"));
+
+      //************************
+      function addNumber(number1, number2) {
+        return number1 + number2;
+      }
+      console.log(addNumber(5, 10));
+
+      //************************
+      function multiplyNumber(number1, number2) {
+        return number1 * number2;
+      }
+      console.log(multiplyNumber(5, 10));
+
+      //************************
+      function divideNumber(number1, number2) {
+        if (number2 === 0) {
+          return "Cannot divide by zero!";
+        }
+        return number1 / number2;
+      }
+      console.log(divideNumber(10, 5));
+      console.log(divideNumber(10, 0));
+      //************************
+      function showMessage() {
+        alert("Hi, I'm the alpha");
+      }
+      showMessage();
+
+      //************************
+      function message(radius) {
+        let message = "Hello, I'm the omega"; // local variable
+        alert(message);
+        let result = 3.142 * radius ** 2;
+        alert(result);
+      }
+      message(5);
+
+      //************************
+      function param(parameters1, parameters2, ...parametersN) {
+        //body
+      }
+
+      //************************
+      let names = prompt("enter your names (firstname and lastname)");
+      function displayName(names) {
+        return `hi my name is ${names}`; // local variable
+        alert(names);
+      }
+      console.log(displayName(names));
+      displayName(names);
+
+      //************************
+
+      let arrowFunction = console.log("Knowledge");
+
+      //****************************
+
+      //**********************
+
+      //class - task
+
+      // task 1
+      function greetingFunction(name, timeOfDay) {
+        return `good ${timeOfDay}, ${name}!,happy new in advance`;
+      }
+      console.log(greetingFunction("Alice", "morning"));
+
+      // task 2
+      function areaOfRectangleFunction(length, breath) {
+        return length * breath;
+      }
+      console.log(areaOfRectangleFunction(5, 10));
+
+      //task 3
+      function checkEvenOdd(number) {
+        // return number % 2 === 0 ? "even" : "odd";
+        if (number % 2 === 0) {
+          return "even";
+        } else {
+          return "odd";
+        }
+      }
+      console.log(checkEvenOdd(5)); // output: odd
+    </script>
+  </body>
+</html>

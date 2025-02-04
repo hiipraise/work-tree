@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f4f8;
+}
+.box {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: spin;
+  animation-duration: 3s;
+}
+
+@keyframes spin {
+  0% {
+  }
+  50% {
+    scale: 2;
+    transform: rotate(0);
+    border-radius: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 50%;
+    scale: 2;
+  }
+}

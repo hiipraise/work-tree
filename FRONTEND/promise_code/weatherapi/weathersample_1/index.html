@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Praise" />
+    <meta name="description" content="A weather forecast app" />
+    <meta name="keywords" content="weather, forecast, app" />
+    <meta name="og:title" content="Weather Forecast" />
+    <meta name="language" content="English" />
+    <meta name="copyright" content="Praise" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/download.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather Forecast</h1>
+      <form id="weather-form">
+        <label for="city-input">City:</label>
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter city name..."
+          required
+        />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </form>
+      <div id="weather-data" class="weather-data">
+        <div class="weather-location">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <p id="weather-location-city">Lagos</p>
+        </div>
+        <div class="weather-temperature">
+          <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
+          <p id="weather-temperature">28°C</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

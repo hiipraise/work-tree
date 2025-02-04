@@ -1,0 +1,112 @@
+.bestseller-container {
+  position: relative;
+  /* height: 895px; */
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 55px;
+}
+
+.bestseller-product {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.bestseller-product-img {
+  width: 389px;
+  height: 796px;
+  background-image: url(../../assets/img/productimg.jpg);
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 1189px) {
+    width: 18rem;
+  }
+  @media (max-width: 768px) {
+    /* width: 280px; */
+  }
+}
+.bestseller-product-img-2 {
+  width: 389px;
+  height: 796px;
+  background-image: url(C:\Users\CHAROM\OneDrive\Desktop\WORKS\REACT\FoodCommerce\src\assets\img\productimg2.jpg);
+  background-size: cover;
+  order: 2;
+  background-position: center;
+  @media (max-width: 1189px) {
+    width: 18rem;
+  }
+  @media (max-width: 768px) {
+  }
+}
+.bestseller-product-container {
+  display: flex;
+  flex-direction: column;
+}
+.bestseller-product-name {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  flex-flow: column nowrap;
+  padding: 24px;
+}
+.bestseller-product-name p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #252b42;
+}
+.bestseller-product-name small {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #737373;
+}
+
+.bestseller-header {
+  display: flex;
+  align-items: center;
+  padding: 24px 0px;
+  @media (min-width: 1087px) {
+    gap: 50px;
+  }
+  @media (max-width: 1086px) {
+    gap: 20px;
+  }
+  @media (max-width: 1027px) {
+    justify-content: space-between;
+    gap: 0;
+  } /*contiue from 987px*/
+}
+
+.bestseller-header strong {
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #252b42;
+  @media (max-width: 1027px) {
+    width: 18%;
+  }
+}
+
+.bestseller-header ul {
+  display: flex;
+  gap: 25px;
+  padding: 10px;
+}
+
+.bestseller-header .chevron-arrows {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bestselleritem-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 30px;
+  @media (max-width: 1086px) {
+  }
+}

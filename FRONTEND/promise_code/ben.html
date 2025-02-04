@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+      #movie-container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      h2 {
+        margin: 0 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="movie-container">Loading...</div>
+    <script>
+      const API_URL =
+        "https://api.themoviedb.org/3/discover/movie?api_key=b2defd5282fbc07c195e2c67373704cb&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-01-01&release_date.lte=2023-12-31";
+      async function fetchMovieData() {
+        try {
+          const response = await fetch(API_URL);
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const movieData = await response.json();
+          displayMovieData(movieData);
+        } catch (error) {
+          console.error(
+            "There has been a problem with your fetch operation:",
+            error
+          );
+        }
+      }
+
+      function displayMovieData(movie) {
+        console.log(movie); // Log the entire movie object
+        const movieContainer = document.getElementById("movie-container");
+
+        // Example of how to display the data
+        movieContainer.innerHTML = `
+                <h2>${movie.results[0].title}</h2>
+                <img src="https://image.tmdb.org/t/p/w500${movie.results[0].backdrop_path}" alt="${movie.results[0].title} Poster">
+                <p>${movie.results[10].overview}</p>
+                <p>Average Rating: ${movie.vote_average} (${movie.results[10].vote_count} votes)</p>
+            `;
+      }
+
+      // Call the fetch function when the page loads
+      window.onload = fetchMovieData;
+
+      // function cal(params, params2) {
+      //   return params + params2 + 2;
+      // }
+      // const number = 10;
+      // console.log(cal(number, 2));
+    </script>
+  </body>
+</html>
