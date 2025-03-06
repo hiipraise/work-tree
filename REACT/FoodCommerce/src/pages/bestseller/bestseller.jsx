@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./bestseller.css";
 import ChevronLeft from "../../assets/icon/chevronleft";
 import ChevronRight from "../../assets/icon/chevronRight";
 import BestSellerItem from "../../components/bestseller_item/bestselleritem";
-import { productData } from "../../data/bestselleritem";
+import { productData } from "../../data/product.js";
+
 const BestSeller = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -16,7 +17,6 @@ const BestSeller = () => {
       }
     };
 
-    // Run on mount and listen for window resize
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -75,64 +75,3 @@ const BestSeller = () => {
 };
 
 export default BestSeller;
-
-/*
-import "./bestseller.css";
-import ChevronLeft from "../../assets/icon/chevronleft";
-import ChevronRight from "../../assets/icon/chevronRight";
-import BestSellerItem from "../../components/bestseller_item/bestselleritem";
-import { productData } from "../../data/bestselleritem";
-
-const BestSeller = () => {
-  return (
-    <div className="bestseller-container">
-      <div className="bestseller-product">
-        <div className="bestseller-product-img">
-          <div className="bestseller-product-name">
-            <p>FURNITURE</p>
-            <small>6 Items</small>
-          </div>
-        </div>
-        <div className="bestseller-product-container">
-          <div className="bestseller-header">
-            <strong>BESTSELLER PRODUCT</strong>
-            <ul>
-              <li>
-                <a href="#">Men</a>
-              </li>
-              <li>
-                <a href="#">Women</a>
-              </li>
-              <li>
-                <a href="#">Accessories</a>
-              </li>
-            </ul>
-            <div className="chevron-arrows">
-              <ChevronLeft />
-              <ChevronRight />
-            </div>
-          </div>
-          <hr />
-          <div className="bestselleritem-container">
-            {productData.length &&
-              productData.map((product, index) => (
-                <BestSellerItem
-                  key={index}
-                  image={product.img}
-                  name={product.tagline}
-                  category={product.category}
-                  price={product.price}
-                  priceDiscount={product.priceDiscount}
-                />
-              ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default BestSeller;
-
-
- */

@@ -16,28 +16,32 @@
 }
 .bestseller-product-img {
   width: 389px;
-  height: 796px;
+  height: 784px;
   background-image: url(../../assets/img/productimg.jpg);
   background-size: cover;
   background-position: center;
   @media (max-width: 1189px) {
     width: 18rem;
   }
-  @media (max-width: 768px) {
-    /* width: 280px; */
+  @media (max-width: 987px) {
+    width: 100%;
+    height: 20rem;
   }
 }
 .bestseller-product-img-2 {
   width: 389px;
-  height: 796px;
-  background-image: url(C:\Users\CHAROM\OneDrive\Desktop\WORKS\REACT\FoodCommerce\src\assets\img\productimg2.jpg);
+  height: 784px;
+  /* height: 871px; */
+  background-image: url(../..\assets\img\productimg2.jpg);
   background-size: cover;
   order: 2;
   background-position: center;
   @media (max-width: 1189px) {
     width: 18rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 987px) {
+    width: 100%;
+    height: 20rem;
   }
 }
 .bestseller-product-container {

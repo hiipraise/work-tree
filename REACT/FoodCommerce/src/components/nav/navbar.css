@@ -1,12 +1,16 @@
 nav {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
+  background-color: white;
+  position: fixed;
   height: 91px;
   align-items: center;
   @media (max-width: 970px) {
     padding: 0px 60px;
     justify-content: space-between;
   }
+  z-index: 1;
 }
 
 h1 {

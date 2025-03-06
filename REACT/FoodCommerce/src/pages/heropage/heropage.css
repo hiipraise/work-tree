@@ -1,4 +1,5 @@
 .hero {
+  position: initial;
   height: 540px;
   background-image: url(./bandage.jpg);
   background-size: cover;

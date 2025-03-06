@@ -3,7 +3,7 @@ import "./bestseller.css";
 import ChevronLeft from "../../assets/icon/chevronleft";
 import ChevronRight from "../../assets/icon/chevronRight";
 import BestSellerItem from "../../components/bestseller_item/bestselleritem";
-import { productData } from "../../data/bestselleritem";
+import { productData } from "../../data/product.js"
 const BestSeller = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 

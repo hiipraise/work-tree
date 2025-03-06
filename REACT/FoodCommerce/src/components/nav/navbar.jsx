@@ -1,26 +1,32 @@
-// import React from 'react'
+import { useContext } from "react";
 import "./navbar.css";
 import Search from "../../assets/icon/search";
 import LikeSvg from "../../assets/icon/likeSvg";
 import CartSvg from "../../assets/icon/cartSvg";
 import UserSvg from "../../assets/icon/userSvg";
+import { AuthContext } from "../../context/AuthContext";
+import { CartContext } from "../../context/cartContext";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const { monthlyAllowance } = useContext(AuthContext);
+  const { cartItems } = useContext(CartContext);
+
   return (
-    <nav>
+    <nav className="top-0 fixed">
       <h1>Bandage</h1>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/shop">
             Shop
             <i
               className="fa fa-chevron-down shop-chevron"
               aria-hidden="true"
             ></i>
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#">About</a>
@@ -37,15 +43,24 @@ const NavBar = () => {
       </ul>
       <span className="span-sign-cart-like">
         <p className="icon-login">
-          <UserSvg/>
-          Login / Register
+          <UserSvg />
+          <Link to="/login">
+            <span>Login</span>
+          </Link>{" "}
+          /
+          <Link to="/register">
+            <span>Register</span>
+          </Link>{" "}
         </p>
         <Search />
         <p className="cart-icon">
-          <CartSvg />1
+          <Link className="flex gap-2 items-center" to="/cart">
+            <CartSvg />
+            {cartItems && cartItems.length}
+          </Link>
         </p>
         <p className="like-icon">
-          <LikeSvg />1
+          <LikeSvg /> {monthlyAllowance}
         </p>
       </span>
     </nav>

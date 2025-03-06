@@ -108,3 +108,12 @@
   letter-spacing: 0.1px;
   margin-left: 5px;
 }
+
+.addcartbtn,
+.removecartbtn {
+  background-color: #ff3847;
+  padding: 5px 16px;
+  border-radius: 5px;
+  /* background-color: #23856d; */
+  color: #ffffff;
+}
