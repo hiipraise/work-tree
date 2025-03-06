@@ -1,0 +1,8 @@
+name: Praise, subject: Mathematics, Result: A 
+name: Chinedu, subject: Chemistry, Result: B
+name: Tobi, subject: Physics, Result: A
+name: Blessing, subject: Economics, Result: C
+name: Destiny, subject: English, Result: B
+name: Joy, subject: Biology, Result: A
+name: Samuel, subject: History, Result: B
+name: Grace, subject: Geography, Result: A
