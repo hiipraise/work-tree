@@ -1,4 +1,4 @@
-//import express
+ //import express
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 // });
 
 app.get("/receipt", (req, res) => {
-  fs.readFile("example.txt", "utf8", (err, data) => {
+  fs.readFile("example.txt", "utf-8", (err, data) => {
     if (err) {
       if (err.code === "ENOENT") {
         return res.status(404).json({ message: "File not found" });
@@ -36,7 +36,7 @@ app.get("/receipt", (req, res) => {
 });
 
 app.get("/result", (req, res) => {
-  fs.readFile("result.txt", "utf8", (err, data) => {
+  fs.readFile("result.txt", "utf-8", (err, data) => {
     if (err) {
       if (err.code === "ENOENT") {
         return res.status(404).json({ message: "Student files not found" });

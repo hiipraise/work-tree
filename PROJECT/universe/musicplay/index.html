@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Playlist Player</title>
+    <style>
+      /* ... (CSS styles from previous response) ... */
+      body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 95vh;
+        background-color: #f0f0f0; /* Light gray background */
+      }
+
+      .player-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        text-align: center; /* Center content */
+      }
+
+      #playButton {
+        background-color: #1db954; /* Spotify green */
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        font-size: 16px;
+        border-radius: 30px; /* Rounded button */
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+        outline: none; /* Remove default outline */
+      }
+
+      #playButton:hover {
+        transform: scale(1.05); /* Scale up slightly on hover */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+      }
+
+      #playButton:active {
+        transform: scale(0.95); /* Scale down slightly on click */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Smaller shadow on click */
+      }
+
+      #spotifyLink {
+        margin-top: 10px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 250px;
+      }
+
+      #spotifyPlayer {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="player-container">
+      <button id="playButton">Play</button>
+      <div class="wiggle-lines" id="wiggleLines">
+        <div class="wiggle-line"></div>
+        <div class="wiggle-line"></div>
+        <div class="wiggle-line"></div>
+      </div>
+      <input
+        type="text"
+        id="spotifyLink"
+        placeholder="Enter Spotify Playlist Link"
+      />
+      <div id="spotifyPlayer"></div>
+    </div>
+
+    <script>
+      const playButton = document.getElementById("playButton");
+      const wiggleLines = document.getElementById("wiggleLines");
+      const spotifyLinkInput = document.getElementById("spotifyLink");
+      const spotifyPlayer = document.getElementById("spotifyPlayer");
+
+      let isPlaying = false;
+      let currentIframe = null; // Store the current iframe
+
+      playButton.addEventListener("click", () => {
+        isPlaying = !isPlaying;
+
+        if (isPlaying) {
+          wiggleLines.style.opacity = 1;
+          playButton.textContent = "Pause";
+
+          const spotifyLink = spotifyLinkInput.value;
+          if (spotifyLink) {
+            embedSpotifyPlaylist(spotifyLink);
+          } else {
+            console.error("No Spotify link entered.");
+            alert("Please enter a Spotify playlist link."); // Alert the user
+            isPlaying = false; // Reset the playing state
+            wiggleLines.style.opacity = 0; // Hide wiggle lines
+            playButton.textContent = "Play"; // Reset button text
+          }
+        } else {
+          wiggleLines.style.opacity = 0;
+          playButton.textContent = "Play";
+          if (currentIframe) {
+            currentIframe.remove(); // Remove the iframe to stop playback
+            currentIframe = null;
+          }
+        }
+      });
+
+      function embedSpotifyPlaylist(link) {
+        try {
+          // Extract the playlist ID from the link (handles various link formats)
+          const playlistId = extractPlaylistId(link);
+
+          if (!playlistId) {
+            throw new Error("Invalid Spotify link.");
+          }
+
+          const embedUrl = `https://open.spotify.com/embed/playlist/${playlistId}`;
+
+          // Create the iframe
+          const iframe = document.createElement("iframe");
+          iframe.src = embedUrl;
+          iframe.width = "300"; // Adjust as needed
+          iframe.height = "380"; // Adjust as needed
+          iframe.frameBorder = "0";
+          iframe.allow =
+            "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
+          iframe.loading = "lazy";
+
+          // Remove previous iframe if any
+          if (currentIframe) {
+            currentIframe.remove();
+          }
+
+          spotifyPlayer.appendChild(iframe); // Add to the player div
+          currentIframe = iframe; // Store the current iframe
+        } catch (error) {
+          console.error("Error embedding Spotify playlist:", error);
+          alert(
+            "There was a problem embedding the Spotify playlist. Please check the link."
+          );
+          isPlaying = false; // Reset the state
+          wiggleLines.style.opacity = 0; // Hide the wiggle lines
+          playButton.textContent = "Play"; // Reset the button text
+        }
+      }
+
+      function extractPlaylistId(link) {
+        // Regular expressions to match different Spotify link formats
+        const playlistIdRegex1 = /playlist\/([a-zA-Z0-9]+)/; // Matches /playlist/ID
+        const playlistIdRegex2 = /playlist\/([a-zA-Z0-9]+)\?/; // Matches /playlist/ID?
+        const playlistIdRegex3 = /open\.spotify\.com\/playlist\/([a-zA-Z0-9]+)/; // Matches open.spotify.com/playlist/ID
+
+        let match =
+          link.match(playlistIdRegex1) ||
+          link.match(playlistIdRegex2) ||
+          link.match(playlistIdRegex3);
+
+        return match ? match[1] : null;
+      }
+    </script>
+  </body>
+</html>
