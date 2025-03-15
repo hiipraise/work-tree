@@ -1,0 +1,24 @@
+{
+  "name": "firstbackend",
+  "version": "1.0.0",
+  "description": "This backend is for sporty sport update app",
+  "homepage": "https://github.com/hiipraise/first-backend-repo#readme",
+  "bugs": {
+    "url": "https://github.com/hiipraise/first-backend-repo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiipraise/first-backend-repo.git"
+  },
+  "license": "ISC",
+  "author": "Praise",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

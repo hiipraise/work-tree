@@ -13,7 +13,7 @@ const getWeather = async () => {
     return;
   }
   try {
-    // fetch coordinates of the city from open meteo,s geocoding api\
+    // fetch coordinates of the city from open meteo geocoding api\
     const geoResponse = await fetch(
       `https://geocoding-api.open-meteo.com/v1/search?name=${city}`
     );
@@ -30,7 +30,7 @@ const getWeather = async () => {
     const { latitude, longitude, name } = geoData.results[0];
     console.log(latitude, longitude, name);
 
-    // fetch weather data from open meteo,s weather api
+    // fetch weather data from open meteo weather api
     const weatherResponse = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
     );

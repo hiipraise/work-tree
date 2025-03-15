@@ -1,4 +1,4 @@
- //import express
+//import express
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -12,14 +12,14 @@ app.get("/", (req, res) => {
   res.end("Welcome to your first backend class!");
 });
 
-//use the file system to read the content of example.txt
-// fs.readFile("example.txt", "utf8", (err, data) => {
-//   if (err) {
-//     console.error("Error Reading:", err);
-//     return;
-//   }
-//   console.log("Example content is:", data);
-// });
+// use the file system to read the content of example.txt
+fs.readFile("example.txt", "utf8", (err, data) => {
+  if (err) {
+    console.error("Error Reading:", err);
+    return;
+  }
+  console.log("Example content is:", data);
+});
 
 app.get("/receipt", (req, res) => {
   fs.readFile("example.txt", "utf-8", (err, data) => {
@@ -49,13 +49,46 @@ app.get("/result", (req, res) => {
   });
 });
 
-// fs.writeFile("newrecord.txt", "This is a new record", (err) => {
-//   if (err) {
-//     console.error("Error Writing:", err);
-//     return;
-//   }
-//   console.log("New record written successfully!");
-// });
+app.post("/donate", (req, res) => {
+  const { amount } = req.body;
+  fs.appendFile("donation.txt", `${amount}\n`, (err) => {
+    if (err) {
+      console.error("Error Writing:", err);
+      return res.status(500).json({ message: "Error writing donation" });
+    }
+    res.json({ message: "Donation written successfully" });
+  });
+  // fs.writeFile("donation.txt", `${amount}`, (err) => {
+  //   if (err) {
+  //     console.error("Error Writing:", err);
+  //     return res.status(500).json({ message: "Error writing donation" });
+  //   }
+  //   res.json({ message: "Donation written successfully" });
+  // });
+});
+
+app.get("/poem"),
+  (req, res) => {
+    fs.readFile("result.txt", "utf-8", (err, data) => {
+      if (err) {
+        if (err.code === "ENOENT") {
+          return res.status(404).json({ message: "Student files not found" });
+        }
+        return res
+          .status(500)
+          .json({ message: "Error reading student files", error: err });
+      }
+      res.json({ message: "Student files", data });
+    });
+  };
+
+fs.writeFile("newrecord.txt", "This is a new record", (err) => {
+  if (err) {
+    console.error("Error Writing:", err);
+    return;
+  }
+  console.log("New record written successfully!");
+});
 
 //file logger features
 // class Shirt {
@@ -114,6 +147,7 @@ app.post("/attendance", (req, res) => {
 });
 
 //expose our beackend through api using server to external requests
-app.listen(9000, () => {
-  console.log("Listening on http://localhost:9000");
+const port = 9000;
+app.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}`);
 });
