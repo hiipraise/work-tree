@@ -1,0 +1,17 @@
+/* Testimonial.css */
+.testimonial {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    min-width: 300px;
+  }
+  
+  .testimonial p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .testimonial .name {
+    font-style: italic;
+    margin-top: 10px;
+  }

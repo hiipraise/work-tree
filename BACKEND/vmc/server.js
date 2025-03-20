@@ -10,9 +10,13 @@ app.use(express.json());
 //create the routes
 const { resultRouter } = require("./src/routes/results.routes");
 const { userRouter } = require("./src/routes/user.routes");
+const { donationRouter } = require("./src/routes/donation.routes");
+const { spellRouter } = require("./src/routes/spell.routes");
 
 app.use("/api/v1/resultapi", resultRouter);
 app.use("/api/v1/userapi", userRouter);
+app.use("/api/v1/donationapi", donationRouter);
+app.use("/api/v1/spell", spellRouter);
 
 app.get("/", (req, res) => {
   res.end("Welcome to your first backend class!");
