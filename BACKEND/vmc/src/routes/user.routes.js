@@ -4,9 +4,10 @@ const {
   getUser,
   updateUser,
 } = require("../controller/user.controller");
+const addusername = require("../middleware/addusername");
 
 const userRouter = express.Router();
-userRouter.route("/register").post(createUser); // controller || middleware || && (i.e both)
+userRouter.route("/register").post(addusername, createUser); // middleware || controller || && (i.e both)
 userRouter.route("/login").post(getUser);
 userRouter.route("/userupdate").put(updateUser);
 

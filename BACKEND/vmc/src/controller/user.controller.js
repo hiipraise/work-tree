@@ -1,25 +1,17 @@
 const createUser = (req, res, next) => {
-  const { username, firstname, lastname, phonenumber, email, password } =
-    req.body;
+  const { name, phonenumber, email, password } = req.body;
+  const username = req.username;
   const acctCreatedOn = new Date().toLocaleString();
 
-  console.log(username, firstname, lastname, phonenumber, email, acctCreatedOn);
-  if (
-    !username ||
-    !firstname ||
-    !lastname ||
-    !phonenumber ||
-    !email ||
-    !password
-  ) {
+  console.log(username, name, phonenumber, email, acctCreatedOn);
+  if (!name || !phonenumber || !email || !password) {
     return res.status(400).json({ message: "All fields are required" });
   }
   res.json({
     message: "Account successfully created",
     data: {
       username,
-      firstname,
-      lastname,
+      name,
       phonenumber,
       email,
       password,
@@ -29,11 +21,12 @@ const createUser = (req, res, next) => {
 };
 
 const getUser = (req, res, next) => {
-  const { username, password } = req.body;
+  const { password } = req.body;
+  const username = req.username;
   const acctSignIn = new Date().toLocaleString();
 
   console.log(username, acctSignIn);
-  if (!username || !password) {
+  if (!password) {
     return res.status(400).json({ message: "All fields are required" });
   }
   res.json({
@@ -51,7 +44,7 @@ const updateUser = (req, res, next) => {
   const acctUpdated = new Date().toLocaleString();
 
   console.log(username, acctUpdated);
-  if (!username ) {
+  if (!username) {
     return res.status(400).json({ message: "All fields are required" });
   }
   res.json({
