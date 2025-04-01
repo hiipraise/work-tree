@@ -5,7 +5,7 @@ const validatecountry = (req, res, next) => {
     next();
   } else {
     return res
-      .status(400)
+      .status(401)
       .json({ message: "Not available to students outside Nigeria" });
   }
 };

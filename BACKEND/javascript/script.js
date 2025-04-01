@@ -115,3 +115,75 @@ const combined = { ...obj1, ...obj2 };
 console.log(combined);
 
 // object constructors
+
+// sort
+const arraySort = [5, 6, 3, 2];
+const arraySort2 = [1, 9, 7, 4, 8];
+
+const merged = [...arraySort, ...arraySort2];
+console.log(merged.sort());
+
+// theaArray.splice (start, deletecount, item1, item2)
+
+// adding elements
+const spliceArray = [1, 2, 3];
+spliceArray.splice(3, 0, 4, 5);
+console.log(spliceArray);
+
+// removing elements
+const spliceArray2 = [1, 2, 3, 4, 5];
+// spliceArray2.splice(3, 2);
+// replacing elements
+spliceArray2.splice(1, 2, 6, 8);
+console.log(spliceArray2);
+
+// prime numbers
+function primeNumber(number) {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i * i <= number; i++) {
+    if (number % i === 0) {
+      // return false;
+      return `${number} is not a prime number`;
+    }
+  }
+  // return true;
+  return `${number} is a prime number`;
+}
+console.log(primeNumber(5));
+
+function evenOdd(number) {
+  if (number % 2 === 0) {
+    return `${number} is a even number`;
+  }
+  return `${number} is a odd number`;
+}
+console.log(evenOdd(6));
+
+// counts the occurrences of each letter in a string(word)
+function countLetters(word) {
+  const count = {};
+
+  for (let letter of word) {
+    if (count[letter]) {
+      count[letter]++;
+    } else {
+      count[letter] = 1;
+    }
+  }
+  return count;
+}
+console.log(countLetters("handbook"));
+
+// ||
+
+const LettersCount = (word) => {
+  const count = {};
+  for (let letter of word) {
+    count[letter] = (count[letter] || 0) + 1;
+  }
+  return count;
+};
+
+console.log(LettersCount("hello"));
