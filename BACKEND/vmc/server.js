@@ -2,10 +2,12 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const connectDB = require("./database/dbConnection");
 
 //instanciate express
 const app = express();
 app.use(express.json());
+require("dotenv").config();
 
 //create the routes
 const { resultRouter } = require("./src/routes/results.routes");
@@ -142,7 +144,8 @@ app.get("/", (req, res) => {
 // });
 
 //expose our beackend through api using server to external requests
-const port = 9000;
-app.listen(port, () => {
-  console.log(`Listening on http://localhost:${port}`);
+const PORT = process.env.PORT;
+connectDB();
+app.listen(PORT, () => {
+  console.log(`Listening on http://localhost:${PORT}`);
 });
